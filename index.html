@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Online Rumah Sakit</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="root">
+
+      <div class="hideBody" id="tersimpan">
+        <div class="simpanBox">
+          <h2>Pendaftaran Berhasil!</h2>
+          <img src="img/ceklist.png"><br>
+          <!-- <button class="ok-btn">OK</button> -->
+          <div class="next-btn" id="nextBtn">
+            <a href="index.html">
+                <input type="submit" name="submit" class="tombol-save" value="OK" style="width:100px;"/>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Pendaftaran Online Rumah Sakit</a>
+          </div>
+        </nav>
+
+      <!-- Progress -->
+      <div class="box">
+        <div class="proses-daftar">
+          <div class="prosesForm" id="prosesZero" onclick="tabZero()">
+            <h6>1</h6>
+            <p>Rumah Sakit</p>
+          </div>
+          <div class="prosesForm" id="prosesSatu" onclick="tabSatu()">
+            <h6>2</h6>
+            <p>Masuk</p>
+          </div>
+          <div class="prosesForm" id="prosesDua" onclick="tabDua()">
+            <h6>3</h6>
+            <p>Jenis Poli</p>
+          </div>
+          <div class="prosesForm" id="prosesTiga" onclick="tabTiga()">
+            <h6>4</h6>
+            <p>Tgl Reservasi</p>
+          </div>
+          <div class="prosesForm" id="prosesEmpat" onclick="tabEmpat()">
+            <h6>5</h6>
+            <p>Resume</p>
+          </div>
+        </div>
+
+        <!-- Tab 0 -->
+        <div class="tab" id="tab0">
+          <!-- Pilih Jenis Poliklinik -->
+          <div class="form-box" id="form0">
+            <h5>Pilih Rumah Sakit</h5>
+              <div class="rs-choose">
+                  <div class="rs-imege" id="rs1" onclick="rsSatu()">
+                      <img src="img/rsud-ntb.jpeg" id="rs1Img">
+                      <p>RSUD Provinsi NTB</p>
+                  </div>
+                  <div class="rs-imege" id="rs2" onclick="rsDua()">
+                      <img src="img/rsud-kota-mataram.jpg" id="rs2Img">
+                      <p>RSUD Kota Mataram</p>
+                  </div>
+              </div>
+              <div class="rs-choose">
+                  <div class="rs-imege" id="rs3" onclick="rsTiga()">
+                      <img src="img/rs-unram.jpeg" id="rs3Img">
+                      <p>RS Universitas Mataram</p>
+                  </div>
+                  <div class="rs-imege" id="rs4" onclick="rsEmpat()">
+                      <img src="img/rs-harapan-keluarga.jpg" id="rs4Img">
+                      <p>RS Harapan Keluarga</p>
+                  </div>
+              </div>
+              
+              <div class="next-btn-2" id="nextBtnSatu" onclick="tabSatu()">
+                <input type="button" id="baruBtn2" name="submit" class="tombol" value="Selanjutnya" style="width:95%;">
+              </div>
+            </div>
+        </div>
+
+
+        <!-- Tab 1 -->
+        <div class="tab" id="tab1">
+          <!-- Pilih Jenis Pasien -->
+          <div class="form-box" id="form1">
+              <h5>Pilih Jenis Pasien</h5>
+              <div class="jenis-pasien">
+                  <div class="pasien1" id="pasien1" onclick="pasienBaru()">
+                      <p>Baru</p>
+                      <img src="img/baru.png" class="ikon-pasien">
+                  </div>
+                  <div class="pasien2" id="pasien2" onclick="pasienLama()">
+                      <p>Lama</p>
+                      <img src="img/lama.png" class="ikon-pasien">
+                  </div>
+              </div>
+              <!-- Form Pasien Baru -->
+              <!-- action="proses.php" method="post" -->
+              <form action="" method="post"> 
+                <div class="formBaru" id="formBaru">
+                  <input type="text" name="no_rekam_medis" id="noRm" style="display: none;">
+                    <p class="lebel">Nama Pasien</p>
+                    <input type="text" name="nama_pasien" id="namaPasien" placeholder="">
+                    <p class="lebel">Tanggal Lahir</p>
+                    <input type="date" name="tgl_lahir" id="tglLahir" placeholder="">
+                    <!-- <input type="text" name="jenis_kelamin" placeholder="Jenis Kelamin"> -->
+                    <p class="lebel">Jenis Kelamin</p>
+                    <select id="jenisKelamin" name="jenis_kelamin" placeholder="" value="">
+                      <option style="color: grey;font-style: italic;" selected disabled hidden>-- Jenis Kelamin --</option>
+                      <option>Pria</option>
+                      <option>Wanita</option>
+                    </select>
+                    <p class="lebel">No Telepon</p>
+                    <input type="text" name="no_telepon" id="noTelepon" placeholder="">
+                    <p class="lebel">No KTP/Identitas</p>
+                    <input type="text" name="no_ktp" id="noKtp" placeholder="">
+                    <br><br>
+                  <!-- Button -->
+                  <div class="jenisPoliBtn">
+                    <div class="back-btn" id="backBtn" onclick="tabZero()" style="margin-left: 10px; margin-right: 10px;">
+                      <input type="button" name="submit" class="tombol" value="Kembali"/>
+                    </div>
+                    <div class="next-btn" id="nextBtn" onclick="tabDua()" style="margin-left: 10px; margin-right: 10px;">
+                      <input type="button" name="submit" class="tombol" value="Selanjutnya"/>
+                    </div>
+                  </div>
+                </div>
+              <!-- Form Pasien Lama -->
+              <div class="formLama" id="formLama">
+                <p class="lebel">Nomor Rekam Medis</p>
+                <!-- <form action="login.php" method="post">  -->
+                  <input type="text" id="inNoRm" name="no_rekam_medis" placeholder="">
+                  <br><br>
+                  <!-- Button -->
+                  <div class="jenisPoliBtn">
+                    <div class="back-btn" id="backBtn" onclick="tabZero()" style="margin-left: 10px; margin-right: 10px;">
+                      <input type="button" name="submit" class="tombol" value="Kembali"/>
+                    </div>
+                    <div class="next-btn" id="nextBtn" onclick="tabDua()" style="margin-left: 10px; margin-right: 10px;">
+                      <input type="button" name="submit" class="tombol" value="Selanjutnya"/>
+                    </div>
+                  </div>
+                <!-- </form> -->
+              </div>
+              
+          </div>
+        </div>
+
+        <!-- Tab 2 -->
+        <div class="tab" id="tab2">
+          <!-- Pilih Jenis Poliklinik -->
+          <div class="form-box" id="form2">
+            <h5>Pilih Jenis Poliklinik</h5>
+              <div class="jenis-poli">
+                  <div class="poli1" id="poli1" onclick="poliDay()">
+                      <p>Pagi</p>
+                      <img src="img/day.jpg" class="ikon-poli">
+                  </div>
+                  <div class="poli2" id="poli2" onclick="poliAfternoon()">
+                      <p>Sore</p>
+                      <img src="img/evening.jpg" class="ikon-poli">
+                  </div>
+              </div>
+              <input type="text" id="jenisPoli" name="jenis_poli" style="display: none;">
+              <div class="jenisPoliBtn">
+                <div class="back-btn" id="backBtn" onclick="tabSatu()">
+                  <input type="button" name="submit" class="tombol" value="Kembali"/>
+                </div>
+                <div class="next-btn" id="nextBtn" onclick="tabTiga()">
+                  <input type="button" name="submit" class="tombol" value="Selanjutnya"/>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        <!-- Tab 3 -->
+        <div class="tab" id="tab3">
+          <div class="form-box" id="form3">
+            <h5>Pilih Poliklinik</h5>
+            <div class="formPoli">
+              <!-- Rumah Sakit -->
+              <p class="lebel" style="display: none;">Rumah Sakit</p>
+              <input type="text" name="rumah_sakit" id="rumahSakit" placeholder="" style="display: none;">
+              <!-- Tanggal Reservasi -->
+              <p class="lebel">Tanggal Reservasi</p>
+              <input type="date" name="tgl_reservasi" id="tglReservasi" placeholder="">
+              <!-- Poliklinik -->
+              <p class="lebel">Poliklinik</p>
+              <select id="poliklinik" name="poliklinik" placeholder="" value="">
+                <option style="color: grey; font-style: italic;" selected disabled hidden>-- Pilih Poliklinik --</option>
+                <option>Poliklinik Bedah</option>
+                <option>Poliklinik Anak</option>
+                <option>Poliklinik Penyakit Dalam</option>
+                <option>Poliklinik Mata</option>
+                <option>Poliklinik Saraf</option>
+                <option>Poliklinik Jantung</option>
+                <option>Poliklinik Kulit dan Kelamin</option>
+                <option>Poliklinik Gigi dan Mulut</option>
+              </select>
+              <!-- Dokter -->
+              <p class="lebel">Dokter</p>
+              <select id="docter" name="docter" placeholder="" value="">
+              <option style="color: grey; font-style: italic;" selected disabled hidden>-- Pilih Dokter --</option>
+              <option>Dr. Saleh</option>
+              <option>Dr. Yanto</option>
+              <option>Dr. Putu</option>
+              <option>Dr. Mimir</option>
+              <option>Dr. Jerry</option>
+              <option>Dr. Tomcat</option>
+              </select>
+              <!-- Jam Reservasi -->
+              <p class="lebel">Jam Reservasi</p>
+              <input type="time" name="jam_reservasi" id="jamReservasi" placeholder="">
+              <!-- Tipe Pembayaran -->
+              <p class="lebel">Tipe Pembayaran</p>
+              <select id="tipeBayar" name="tipebayar">
+                <option style="color: grey; font-style: italic;" selected disabled hidden>-- Pilih Tipe Pembayaran --</option>
+                <option>BPJS</option>
+                <option>Perjanjian</option>
+                <option>Umum/Pribadi</option>
+              </select>
+              <!-- No Kartu Peserta -->
+              <p class="lebel">Nomor Kartu Peserta</p>
+              <input type="text" name="no_kartu_peserta" id="noKartuPeserta" placeholder="">
+              <!-- No Rujukan -->
+              <p class="lebel">Nomor Rujukan</p>
+              <input type="text" name="no_rujukan" id="noRujukan" placeholder="">
+
+              <div class="jenisPoliBtn">
+                <div class="back-btn" id="backBtn" onclick="tabDua()" style="margin-right: 10px;">
+                  <input type="button" name="submit" class="tombol" value="Kembali"/>
+                </div>
+
+                <div class="next-btn" id="nextBtn" onclick="rekamMedis();tabEmpat();" style="margin-left: 10px;">
+                  <input type="button" name="submit" class="tombol" value="Selanjutnya"/>
+                </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      
+
+        <!-- Tab 4 -->
+        <div class="tab" id="tab4">
+          <div class="form-box" id="form4">
+            <h5>Resume Jadwal Reservasi</h5>
+            <div class="data-pasiennya" id="patientData">
+              <!-- No Rekam Medis -->
+              <p class="lebel-log">No Rekam Medis</p>
+              <div class="log-box">
+                <input type="text" id="logNoRm" name="log_no_rekam_medis" style="display: none;">
+                <p id="logNoRekamMedis"></p>
+              </div>            
+              <!-- Nama Pasien -->
+              <p class="lebel-log">Nama Pasien</p>
+              <div class="log-box">
+                <p id="logNamaPasien"></p>
+              </div>
+              <!-- Tanggal Lahir -->
+              <p class="lebel-log">Tanggal Lahir</p>
+              <div class="log-box">
+                <p id="logTglLahir"></p>
+              </div>
+              <!-- Jenis Kelamin -->
+              <p class="lebel-log">Jenis Kelamin</p>
+              <div class="log-box">
+                <p id="logJenisKelamin"></p>
+              </div>
+              <!-- No Telepon-->
+              <p class="lebel-log">No Telepon</p>
+              <div class="log-box">
+                <p id="logNoTelepon"></p>
+              </div>
+              <!-- No KTP -->
+              <p class="lebel-log">No KTP/Identitas</p>
+              <div class="log-box">
+                <p id="logNoKtp"></p>
+              </div>              
+              <!-- Jenis Poli -->
+              <p class="lebel-log">Jenis Poliklinik</p>
+              <div class="log-box">
+                <p id="logJenisPoli"></p>
+              </div>      
+              <!-- Rumah Sakit -->
+              <p class="lebel-log">Rumah Sakit</p>
+              <div class="log-box">
+                <p id="logRumahSakit"></p>
+              </div>          
+              <!-- Tgl Reservasi -->
+              <p class="lebel-log">Tanggal Reservasi</p>
+              <div class="log-box">
+                <p id="logTglReservasi"></p>
+              </div>
+              <!-- Poliklinik -->
+              <p class="lebel-log">Poliklinik</p>
+              <div class="log-box">
+                <p id="logPoliklinik"></p>
+              </div>
+              <!-- Dokter -->
+              <p class="lebel-log">Dokter</p>
+              <div class="log-box">
+                <p id="logDokter"></p>
+              </div>
+              <!-- Jam Reservasi -->
+              <p class="lebel-log">Jam Reservasi</p>
+              <div class="log-box">
+                <p id="logJamReservasi"></p>
+              </div>              
+              <!-- Tipe Pembayaran -->
+              <p class="lebel-log">Tipe Pembayaran</p>
+              <div class="log-box">
+                <p id="logTipeBayar"></p>
+              </div>              
+              <!-- No Kartu Peserta -->
+              <p class="lebel-log">No Kartu Peserta</p>
+              <div class="log-box">
+                <p id="logNoKartuPeserta"></p>
+              </div>              
+              <!-- No Rujukan -->
+              <p class="lebel-log">No Rujukan</p>
+              <div class="log-box">
+                <p id="logNoRujukan"></p>
+              </div> 
+            </div>
+
+            <!-- SUBMIT -->
+            <!-- <input type="submit" name="submit" class="tombol" value="Selanjutnya"/> -->
+            <div class="jenisPoliBtn">
+              <div class="back-btn" id="backBtn" onclick="tabTiga()">
+                <input type="button" name="submit" class="tombol" value="Kembali"/>
+              </div>
+              <div class="next-btn" id="nextBtn" onclick="simpanData()">
+                <input type="button" name="submit" class="tombol-save" value="Simpan"/>
+              </div>
+            </div>
+          </div>
+        </div>
+            
+
+
+      </div>
+
+
+
+    </form>
+
+
+    </div>
+
+    <!-- =============== SCRIPT JS =============== -->
+    <script>
+        let tersimpan = document.getElementById('tersimpan');
+        tersimpan.style.display = "none";
+
+
+        let pasien1 = document.getElementById('pasien1');
+        let pasien2 = document.getElementById('pasien2');
+
+        let formBaru = document.getElementById('formBaru');
+        let formLama = document.getElementById('formLama');
+
+        let nextBtn = document.getElementById('nextBtn');
+        let backBtn = document.getElementById('backBtn');
+
+        formBaru.style.display = "none";
+        formLama.style.display = "none";
+        nextBtn.style.display = "none";
+
+        let prosesZero = document.getElementById('prosesZero');
+        let prosesSatu = document.getElementById('prosesSatu');
+        let prosesDua = document.getElementById('prosesDua');
+        let prosesTiga = document.getElementById('prosesTiga');
+        let prosesEmpat = document.getElementById('prosesEmpat');
+        let tab0 = document.getElementById('tab0');
+        let tab1 = document.getElementById('tab1');
+        let tab2 = document.getElementById('tab2');
+        let tab3 = document.getElementById('tab3');
+        let tab4 = document.getElementById('tab4');
+
+        tab0.style.display = "block";
+        prosesZero.style.backgroundColor = "#01ACF2";
+        tab1.style.display = "none";
+        prosesSatu.style.backgroundColor = "rgb(255, 255, 255)";
+        tab2.style.display = "none";
+        prosesDua.style.backgroundColor = "rgb(255, 255, 255)";
+        tab3.style.display = "none";
+        prosesTiga.style.backgroundColor = "rgb(255, 255, 255)";
+        tab4.style.display = "none";
+        prosesEmpat.style.backgroundColor = "rgb(255, 255, 255)";
+
+        // Fungsi Tab 0
+        function tabZero(){
+          tab0.style.display = "block";
+          prosesZero.style.backgroundColor = "#01ACF2";
+          tab1.style.display = "none";
+          prosesSatu.style.backgroundColor = "rgb(255, 255, 255)";
+          tab2.style.display = "none";
+          prosesDua.style.backgroundColor = "rgb(255, 255, 255)";
+          tab3.style.display = "none";
+          prosesTiga.style.backgroundColor = "rgb(255, 255, 255)";
+          tab4.style.display = "none";
+          prosesEmpat.style.backgroundColor = "rgb(255, 255, 255)";
+        }
+        let rs1 = document.getElementById('rs1');
+        let rs2 = document.getElementById('rs2');
+        let rs3 = document.getElementById('rs3');
+        let rs4 = document.getElementById('rs4');
+
+        let rs1Img = document.getElementById('rs1Img');
+        let rs2Img = document.getElementById('rs2Img');
+        let rs3Img = document.getElementById('rs3Img');
+        let rs4Img = document.getElementById('rs4Img');
+
+        // Fungsi RSUD Provinsi NTB
+        function rsSatu(){
+          rs1.style.backgroundColor = "#01ACF2";
+          rs2.style.backgroundColor = "#fff";
+          rs3.style.backgroundColor = "#fff";
+          rs4.style.backgroundColor = "#fff";
+
+          rs1.style.color = "#fff";
+          rs2.style.color = "#000";
+          rs3.style.color = "#000";
+          rs4.style.color = "#000";
+
+          rs1Img.style.opacity = "100%";
+          rs2Img.style.opacity = "60%";
+          rs3Img.style.opacity = "60%";
+          rs4Img.style.opacity = "60%";
+
+          document.getElementById('rumahSakit').value = "RSUD Provinsi NTB";
+        }
+        // Fungsi RSUD Kota Mataram
+        function rsDua(){
+          rs1.style.backgroundColor = "#fff";
+          rs2.style.backgroundColor = "#01ACF2";
+          rs3.style.backgroundColor = "#fff";
+          rs4.style.backgroundColor = "#fff";
+
+          rs1.style.color = "#000";
+          rs2.style.color = "#fff";
+          rs3.style.color = "#000";
+          rs4.style.color = "#000";
+
+          rs1Img.style.opacity = "60%";
+          rs2Img.style.opacity = "100%";
+          rs3Img.style.opacity = "60%";
+          rs4Img.style.opacity = "60%";
+
+          document.getElementById('rumahSakit').value = "RSUD Kota Mataram";
+        }
+        // Fungsi RS Universitas Mataram
+        function rsTiga(){
+          rs1.style.backgroundColor = "#fff";
+          rs2.style.backgroundColor = "#fff";
+          rs3.style.backgroundColor = "#01ACF2";
+          rs4.style.backgroundColor = "#fff";
+
+          rs1.style.color = "#000";
+          rs2.style.color = "#000";
+          rs3.style.color = "#fff";
+          rs4.style.color = "#000";
+
+          rs1Img.style.opacity = "60%";
+          rs2Img.style.opacity = "60%";
+          rs3Img.style.opacity = "100%";
+          rs4Img.style.opacity = "60%";
+
+          document.getElementById('rumahSakit').value = "RS Universitas Mataram";
+        }
+        // Fungsi RS Harapan Keluarga
+        function rsEmpat(){
+          rs1.style.backgroundColor = "#fff";
+          rs2.style.backgroundColor = "#fff";
+          rs3.style.backgroundColor = "#fff";
+          rs4.style.backgroundColor = "#01ACF2";
+
+          rs1.style.color = "#000";
+          rs2.style.color = "#000";
+          rs3.style.color = "#000";
+          rs4.style.color = "#fff";
+
+          rs1Img.style.opacity = "60%";
+          rs2Img.style.opacity = "60%";
+          rs3Img.style.opacity = "60%";
+          rs4Img.style.opacity = "100%";
+
+          document.getElementById('rumahSakit').value = "RS Harapan Keluarga";
+        }
+
+        // Fungsi Tab 1
+        function tabSatu(){
+          tab0.style.display = "none";
+          prosesZero.style.backgroundColor = "rgb(255, 255, 255)";
+          tab1.style.display = "block";
+          prosesSatu.style.backgroundColor = "#01ACF2";
+          tab2.style.display = "none";
+          prosesDua.style.backgroundColor = "rgb(255, 255, 255)";
+          tab3.style.display = "none";
+          prosesTiga.style.backgroundColor = "rgb(255, 255, 255)";
+          tab4.style.display = "none";
+          prosesEmpat.style.backgroundColor = "rgb(255, 255, 255)";
+        }
+
+        function pasienBaru(){
+          pasien1.style.backgroundColor = "#01ACF2";
+          pasien2.style.backgroundColor = "#fff";
+          formBaru.style.display = "block";
+          formLama.style.display = "none";
+          nextBtn.style.display = "block";
+        }
+        function pasienLama(){
+          pasien1.style.backgroundColor = "#fff";
+          pasien2.style.backgroundColor = "#01ACF2";
+          formLama.style.display = "block";
+          formBaru.style.display = "none";
+          nextBtn.style.display = "block";
+        }
+
+        function rekamMedis(){
+          let x = Math.floor((Math.random() * 9999999999999999) + 1234567890123456);
+          document.getElementById('noRm').value = x;
+          document.getElementById('logNoRm').value = x;
+        }
+
+        function loginRm(){
+          console.log("Wanjay");
+        }
+
+        //document.getElementById("baruBtn").addEventListener("click", tabDua);
+
+
+        // Fungsi Tab 2
+        function tabDua(){
+          tab2.style.display = "block";
+          prosesDua.style.backgroundColor = "#01ACF2";
+          tab0.style.display = "none";
+          prosesZero.style.backgroundColor = "rgb(255, 255, 255)";
+          tab1.style.display = "none";
+          prosesSatu.style.backgroundColor = "rgb(255, 255, 255)";
+          tab3.style.display = "none";
+          prosesTiga.style.backgroundColor = "rgb(255, 255, 255)";
+          tab4.style.display = "none";
+          prosesEmpat.style.backgroundColor = "rgb(255, 255, 255)";
+        }
+        let poli1 = document.getElementById('poli1');
+        let poli2 = document.getElementById('poli2');
+
+        backBtn.style.display = "block";
+        nextBtn.style.display = "block";
+
+        function poliDay(){
+          poli1.style.backgroundColor = "#01ACF2";
+          poli2.style.backgroundColor = "#fff";
+          document.getElementById('jenisPoli').value = "Pagi";
+        }
+        function poliAfternoon(){
+          poli1.style.backgroundColor = "#fff";
+          poli2.style.backgroundColor = "#01ACF2";
+          document.getElementById('jenisPoli').value = "Sore";
+        }
+
+        // Fungsi Tab 3
+        function tabTiga(){
+          tab0.style.display = "none";
+          prosesZero.style.backgroundColor = "rgb(255, 255, 255)";
+          tab1.style.display = "none";
+          prosesSatu.style.backgroundColor = "rgb(255, 255, 255)";
+          tab2.style.display = "none";
+          prosesDua.style.backgroundColor = "rgb(255, 255, 255)";
+          tab3.style.display = "block";
+          prosesTiga.style.backgroundColor = "#01ACF2";
+          tab4.style.display = "none";
+          prosesEmpat.style.backgroundColor = "rgb(255, 255, 255)";
+        }
+
+
+        // Fungsi Tab 4
+        function tabEmpat(){
+          tab0.style.display = "none";
+          prosesZero.style.backgroundColor = "rgb(255, 255, 255)";
+          tab1.style.display = "none";
+          prosesSatu.style.backgroundColor = "rgb(255, 255, 255)";
+          tab2.style.display = "none";
+          prosesDua.style.backgroundColor = "rgb(255, 255, 255)";
+          tab3.style.display = "none";
+          prosesTiga.style.backgroundColor = "rgb(255, 255, 255)";
+          tab4.style.display = "block";
+          prosesEmpat.style.backgroundColor = "#01ACF2";
+
+          // no_rekam_medis
+          let var1 = document.getElementById('logNoRm').value;
+          document.getElementById('logNoRekamMedis').innerHTML = var1;
+          // nama_pasien
+          let var2 = document.getElementById('namaPasien').value;
+          document.getElementById('logNamaPasien').innerHTML = var2;
+
+          // tgl_lahir
+          let var3 = document.getElementById('tglLahir').value;
+          document.getElementById('logTglLahir').innerHTML = var3;
+
+          // jenis_kelamin
+          let var4 = document.getElementById('jenisKelamin').value;
+          document.getElementById('logJenisKelamin').innerHTML = var4;
+          // no_telepon
+          let var5 = document.getElementById('noTelepon').value;
+          document.getElementById('logNoTelepon').innerHTML = var5;
+          // no_ktp
+          let var6 = document.getElementById('noKtp').value;
+          document.getElementById('logNoKtp').innerHTML = var6;
+
+          // jenis_poli
+          let var7 = document.getElementById('jenisPoli').value;
+          document.getElementById('logJenisPoli').innerHTML = var7;
+          // rumah_sakit
+          let varRs = document.getElementById('rumahSakit').value;
+          document.getElementById('logRumahSakit').innerHTML = varRs;
+
+          // tgl_reservasi
+          let var8 = document.getElementById('tglReservasi').value;
+          document.getElementById('logTglReservasi').innerHTML = var8;
+          // poliklinik
+          let var9 = document.getElementById('poliklinik').value;
+          document.getElementById('logPoliklinik').innerHTML = var9;
+          // dokter
+          let var10 = document.getElementById('docter').value;
+          document.getElementById('logDokter').innerHTML = var10;
+          // jam_reservasi
+          let var11 = document.getElementById('jamReservasi').value;
+          document.getElementById('logJamReservasi').innerHTML = var11;
+          // tipebayar
+          let var12 = document.getElementById('tipeBayar').value;
+          document.getElementById('logTipeBayar').innerHTML = var12;
+          // no_kartu_peserta
+          let var13 = document.getElementById('noKartuPeserta').value;
+          document.getElementById('logNoKartuPeserta').innerHTML = var13;
+          // no_rujukan
+          let var14 = document.getElementById('noRujukan').value;
+          document.getElementById('logNoRujukan').innerHTML = var14;
+        }
+
+
+        function simpanData(){
+          tab0.style.display = "none";
+          tab1.style.display = "none";
+          tab2.style.display = "none";
+          tab3.style.display = "none";
+          tab4.style.display = "none";
+          tersimpan.style.display = "block";
+        }
+        
+
+    </script>
+</body>
+</html>
+
+<!-- <?php
+include "koneksi.php";
+
+if(isset($_POST['submit'])){
+    mysqli_query($koneksi, "insert into datapasien set
+    no_rekam_medis = '$_POST[log_no_rekam_medis]',
+    nama_pasien = '$_POST[nama_pasien]',
+    tgl_lahir = '$_POST[tgl_lahir]',
+    jenis_kelamin = '$_POST[jenis_kelamin]',
+    no_telepon = '$_POST[no_telepon]',
+    no_ktp = '$_POST[no_ktp]',
+    rumah_sakit = '$_POST[rumah_sakit]',
+    jenis_poli = '$_POST[jenis_poli]',
+    docter = '$_POST[docter]',
+    tgl_reservasi = '$_POST[tgl_reservasi]',
+    poliklinik = '$_POST[poliklinik]',
+    jam_reservasi = '$_POST[jam_reservasi]',
+    tipebayar = '$_POST[tipebayar]',
+    no_kartu_peserta = '$_POST[no_kartu_peserta]',
+    no_rujukan = '$_POST[no_rujukan]'");
+
+    echo '<script type="text/JavaScript"> 
+     simpanData();
+     </script>'
+;
+}
+
+?> -->

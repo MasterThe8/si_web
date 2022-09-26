@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.box {
+    width: 100%;
+    background-image: linear-gradient(to bottom right,#73dbdf,#0086a8);
+    margin: 0 auto;
+    padding: 50px;
+    min-height: 100vh;
+}
+
+.form-box {
+    width: 60%;
+    min-height: 50vh;
+    background-color: rgba(255, 255, 255, 1);
+    text-align: center;
+    margin: 20px auto;
+    border-radius: 5px;
+    padding: 20px;
+
+    background: rgba(255,255,255,1);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.jenis-pasien {
+    display: flex;
+    padding: 10px;
+}
+
+.pasien1 {
+    width: 50%;
+    font-size: 24px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.pasien1:hover {
+    background-color: #94b0bb;
+}
+
+.pasien2 {
+    width: 50%;
+    font-size: 24px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.pasien2:hover {
+    background-color: #01ACF2;
+}
+
+.ikon-pasien {
+    height: 100px;
+    width: auto;
+}
+
+.formBaru {
+    width: 100%;
+    /* background-color: #9bd4e4; */
+    margin: 0 auto;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    border-radius: 5px;
+}
+
+.formBaru input {
+    width: 100%;
+    padding: 5px;
+    margin: 5px auto;
+}
+
+.formBaru select {
+    margin: 5px auto;
+}
+
+.formLama {
+    width: 100%;
+    /* background-color: #9bd4e4; */
+    margin: 0 auto;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    border-radius: 5px;
+}
+
+.formLama input {
+    width: 100%;
+    padding: 5px;
+    margin: 5px auto;
+}
+
+.tombol {
+    padding: 5px;
+    background-color: rgb(149, 163, 233);
+    border-radius: 10px;
+    color: #000;
+    transition: 0.2s;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tombol:hover {
+    background-color: rgb(68, 91, 219);
+    color: #fff;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    margin: 5px auto;
+}
+
+.proses-daftar {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+.prosesForm {
+    padding-top: 2px;
+    padding-bottom: 5px;
+    width: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+}
+
+.prosesForm h6 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.prosesForm p {
+    font-size: 12px;
+}
+
+
+/* 2 JENIS POLI */
+.jenis-poli {
+    display: flex;
+    padding: 10px;
+}
+
+.jenisPoliBtn {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+
+.jenisPoliBtn .back-btn input {
+    width: 120px;
+}
+
+.jenisPoliBtn .next-btn input {
+    width: 120px;
+}
+
+.poli1 {
+    width: 50%;
+    font-size: 24px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.poli1:hover {
+    background-color: #01ACF2;
+}
+
+.poli2 {
+    width: 50%;
+    font-size: 24px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.poli2:hover {
+    background-color: #01ACF2;
+}
+
+.ikon-poli {
+    height: 100px;
+    width: auto;
+    border-radius: 16px;
+}
+
+.lebel {
+    left: 0;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+.formPoli {
+    width: 100%;
+    /* background-color: #9bd4e4; */
+    margin: 0 auto;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    border-radius: 5px;
+}
+
+.formPoli input {
+    width: 100%;
+    padding: 5px;
+    margin: 5px auto;
+}
+
+.formPoli select {
+    margin: 5px auto;
+}
+
+.data-pasiennya {
+    width: 100%;
+    /* background-color: #9bd4e4; */
+    margin: 0 auto;
+    padding: 10px;
+    /* border: 1px solid #000; */
+    border-radius: 5px;
+}
+
+.log-box {
+    border: 1px solid #000;
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    background-color: rgb(240, 240, 240);
+    cursor: default;
+}
+
+.log-box p {
+    padding: 0;
+    text-align: left;
+}
+
+.lebel-log {
+    left: 0;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+.hideBody {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 10%;
+    padding-left: 2%;
+}
+
+.simpanBox {
+    position: absolute;
+    width: 500px;
+    height: 260px;
+    border: 2px solid #000;
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: #fff;
+    padding: 50px;
+}
+
+.simpanBox img {
+    width: 50px;
+    height: 50px;
+}
+
+.rs-choose {
+    display: flex;
+    padding: 10px;
+}
+
+.rs-imege {
+    width: 50%;
+    margin: 0 10px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.rs-imege:hover {
+    background-color: #01ACF2;
+    color:#fff;
+}
+
+.rs-choose .rs-imege img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    opacity: 60%;
+    transition: 0.4s;
+}
+
+.rs-choose .rs-imege img:hover {
+    opacity: 100%;
+}
+
+.rs-choose .rs-imege p {
+    margin: 0;
+}
+
+.tombol-save {
+    padding: 5px;
+    background-color: rgb(90, 194, 69);
+    border-radius: 10px;
+    color: #000;
+    transition: 0.2s;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tombol-save:hover {
+    background-color: rgb(33, 153, 9);
+    color: #fff;
+}
